@@ -6,7 +6,7 @@ import { taskStore, TaskStore, updateTaskStoreWithSnapshot } from "./TaskStore";
 
 const StoreContext = createContext({ taskStore });
 
-// Update the taskStore with the initial snapshot
+
 if (process.browser) {
   const initialSnapshot = localStorage.getItem("taskStore");
   if (initialSnapshot) {
@@ -14,7 +14,7 @@ if (process.browser) {
   }
 }
 
-// Synchronize the store with local storage
+
 onSnapshot(taskStore, (snapshot) => {
   localStorage.setItem("taskStore", JSON.stringify(snapshot));
 });

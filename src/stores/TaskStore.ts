@@ -36,7 +36,7 @@ export const TaskStore = types
     };
   });
 
-// Parse the tasks from local storage and create the task store
+
 let tasksFromLocalStorage: any = [];
 if (typeof window !== "undefined") {
   const tasksJSON = localStorage.getItem("taskStore");
@@ -53,12 +53,11 @@ export let taskStore = TaskStore.create({
   tasks: tasksFromLocalStorage,
 });
 
-// Function to update the store with the initial snapshot
+
 export function updateTaskStoreWithSnapshot(snapshot: any) {
   taskStore = TaskStore.create(snapshot);
 }
 
-// Save tasks to local storage whenever a change occurs
 if (typeof window !== "undefined") {
   onSnapshot(taskStore, (snapshot) => {
     localStorage.setItem("taskStore", JSON.stringify(snapshot));

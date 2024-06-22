@@ -87,13 +87,12 @@
   }
 }
 
-/* Firefox */
+
 * {
   scrollbar-width: thin;
   scrollbar-color: hsl(var(--secondary)) hsl(var(--primary));
 }
 
-/* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
   width: 15px;
 }
